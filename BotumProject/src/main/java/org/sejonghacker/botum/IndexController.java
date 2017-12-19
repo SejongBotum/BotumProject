@@ -1,6 +1,8 @@
 package org.sejonghacker.botum;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.sejonghacker.botum.session.MemberVO;
 import org.springframework.stereotype.Controller;
@@ -25,11 +27,12 @@ public class IndexController {
 	 * @return 메인 인덱스 페이지
 	 */
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)
-	public String home(Model m) {
-		//이 부분은 임시 데이터임
-		//MemberVO mvo = null;
-		MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
-		//-----
+
+	public String home(Model m, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		MemberVO mvo = (MemberVO) session.getAttribute("mvo");
+		
+		//MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
 		return (mvo == null)? "login" : "courses-list";
 	}
 	

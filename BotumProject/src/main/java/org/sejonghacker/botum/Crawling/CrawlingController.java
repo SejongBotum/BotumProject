@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,8 +41,6 @@ public class CrawlingController {
 
 		String action = loginPageDocument.select("input.action").val();
 		String newLoc = loginPageDocument.select("input.new_loc").val();
-		
-		System.out.println("토큰 확인 : " + action + " " + newLoc);
 		
 		// Window, Chrome의 User Agent.
 		String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";
