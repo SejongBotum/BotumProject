@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/frontAssets/images/favicon.ico">
+        <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/frontAssets/images/logo_sm.png">
 
         <!-- Sweet Alert css -->
         <link href="${pageContext.servletContext.contextPath}/frontAssets/plugins/sweet-alert/sweetalert2.min.css" rel="stylesheet" type="text/css" />

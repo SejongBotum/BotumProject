@@ -5,7 +5,7 @@
 
     <!-- LOGO -->
     <div class="topbar-left">
-        <a href="index.html" class="logo">
+        <a href="${pageContext.request.contextPath}/home.do" class="logo">
                             <span>
                                 <img src="${pageContext.servletContext.contextPath}/frontAssets/images/logo.png" alt="" height="16">
                             </span>
@@ -22,8 +22,8 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <i class="fi-bell noti-icon"></i>
-                    <span class="badge badge-danger badge-pill noti-icon-badge">4</span>
+<!--                     <i class="fi-bell noti-icon"></i>
+                    <span class="badge badge-danger badge-pill noti-icon-badge">4</span> -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
@@ -33,41 +33,6 @@
                     </div>
 
                     <div class="slimscroll" style="max-height: 190px;">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-success"><i class="mdi mdi-comment-account-outline"></i></div>
-                            <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">1 min ago</small></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-info"><i class="mdi mdi-account-plus"></i></div>
-                            <p class="notify-details">New user registered.<small class="text-muted">5 hours ago</small></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-danger"><i class="mdi mdi-heart"></i></div>
-                            <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">3 days ago</small></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-warning"><i class="mdi mdi-comment-account-outline"></i></div>
-                            <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">4 days ago</small></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-purple"><i class="mdi mdi-account-plus"></i></div>
-                            <p class="notify-details">New user registered.<small class="text-muted">7 days ago</small></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-custom"><i class="mdi mdi-heart"></i></div>
-                            <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">13 days ago</small></p>
-                        </a>
                     </div>
 
                     <!-- All-->
@@ -81,8 +46,8 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <i class="fi-speech-bubble noti-icon"></i>
-                    <span class="badge badge-light badge-pill noti-icon-badge">6</span>
+<!--                     <i class="fi-speech-bubble noti-icon"></i>
+                    <span class="badge badge-light badge-pill noti-icon-badge">6</span> -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
