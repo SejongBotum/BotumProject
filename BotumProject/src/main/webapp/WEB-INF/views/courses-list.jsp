@@ -82,14 +82,14 @@
                                         <tr>
                                             <td>디지털신호처리시스템</td><td>이영렬 교수님</td>
                                             <td>
-                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=디지털신호처리">열람</a>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=001&number=1">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>선형대수</td><td>이영렬 교수님</td>
                                             <td>
-                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=선형대수">열람</a>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=001&number=2">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>

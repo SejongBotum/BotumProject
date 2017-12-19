@@ -28,8 +28,6 @@
             <jsp:include page="layout/leftside.jsp"></jsp:include>
             <!-- Left Sidebar End -->
 
-
-
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -37,7 +35,6 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container-fluid">
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
@@ -54,6 +51,15 @@
                             </div>
                         </div>
                         <!-- end row -->
+                        <div class="form-group row">
+                            <!-- <label class="col-2 col-form-label">질문란</label> -->
+                            <div class="col-10">
+                                <input type="text" class="form-control" value="질문을 입력하세요">
+                            </div>
+                            <div class="col-2" align="right">
+                            <button class="btn btn-primary waves-light waves-effect w-xs" onclick="">제출</button>
+                            </div>
+                        </div>
  						<div class="row">
                             <div class="col-md-12">
                                 <div class="card-box">
@@ -61,19 +67,16 @@
 		                                <!-- Simple card -->
 			                            <div class="col-md-6 col-lg-6">
 			                                <div class="card m-b-30">
-			                                    <img class="card-img-top img-fluid" src="${pageContext.servletContext.contextPath}/frontAssets/images/small/img-1.jpg" alt="Card image cap">
-			                                    <div class="card-body">
-			                                        <h5 class="card-title">${param.name}</h5>
-			                                        <p class="card-text">${param.number}</p>
-			                                        <a href="#" class="btn btn-primary">PREV</a>
-			                                        <a href="#" class="btn btn-primary">NEXT</a>
-			                                    </div>
+			                                <iframe style = "size: witdth:100%;height:500px;" src = "${pageContext.servletContext.contextPath}/scripts/${param.name}/material.pdf"></iframe>
+<%-- 			                                    <img class="card-img-top img-fluid" src="${pageContext.servletContext.contextPath}/frontAssets/images/small/img-1.jpg" alt="Card image cap"> --%>
+
 			                                </div>
 			                            </div>
 		                            	<!-- card -->
                                         <div class="col-6">
                                             <h3 class="m-t-0 header-title">본문</h3>
 											<p class="card-text" id="script"></p>
+										</div>
                                             <div class="clearfix"></div>
                                         </div>
 
@@ -83,35 +86,11 @@
                             </div>
 
                         </div>
-<!-- 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card-box">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="m-t-0 header-title">본문</h3>
-                                            <p class="text-muted m-b-30" id="script">
-                                                
-                                            </p>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                    </div>
-                                    end row
-                                </div>
-                            </div>
-
-                        </div>
-                         -->
                         <!-- end row -->
-
-
                     </div> <!-- container -->
-
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2017 - 2018 Â© Abstack. - Coderthemes.com
                 </footer>
 
             </div>

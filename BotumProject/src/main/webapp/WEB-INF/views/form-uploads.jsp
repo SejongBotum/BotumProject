@@ -15,11 +15,7 @@
         <jsp:include page="layout/css.jsp"></jsp:include>
         <!-- Bootstrap fileupload css -->
         <link href="${pageContext.servletContext.contextPath}/frontAssets/plugins/bootstrap-fileupload/bootstrap-fileupload.css" rel="stylesheet" />
-
-
-
     </head>
-
 
     <body>
 
@@ -63,14 +59,13 @@
                             <div class="col-12">
                                 <div class="card-box">
                                     <h4 class="header-title m-t-0">File Upload</h4>
-                                    <!-- 
-									<form enctype="multipart/form-data" name="fake" method="post" 
-										action="" class="form-horizontal "></form> -->
-                                    <form enctype="multipart/form-data" name="uploadForm"
+                                    
+                                    <form enctype="multipart/form-data" method="post"
 										action="${pageContext.request.contextPath }/uploadFile.do" class="form-horizontal ">
 <%-- 										<form action="${pageContext.request.contextPath }/uploadFile.do" method="post" class="form-horizontal "> --%>
                                             <label class="col-3 col-form-label">파일을 선택하세요.</label>
                                                 <input type="file" name= "file" class="btn-secondary">
+                                                <input type="text" name= "test">
                                                 <input type="submit" class="btn btn-gradient btn-file" value="업로드">
 <!--										
                                         <div class="form-group row">
