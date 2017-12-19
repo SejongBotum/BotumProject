@@ -25,10 +25,12 @@ public class FileUploadController {
 	public String uploadFile(@RequestParam("file") MultipartFile file,
 			@RequestParam("dir") String dir,
 			HttpSession session) {
+		String regfix = "\\";
+//		String regfix = "/";
 		uploadPath = session.getServletContext().getRealPath("/scripts/");
-		File f = new File(uploadPath + "\\" + dir);
+		File f = new File(uploadPath + regfix + dir);
 		if(!f.exists()) f.mkdirs();
-		f = new File(uploadPath + "\\" + dir + "\\" + "material.pdf");
+		f = new File(uploadPath + regfix + dir + regfix + "material.pdf");
 		System.out.println(file.getOriginalFilename());
 		try {
 			file.transferTo(f);
@@ -37,10 +39,5 @@ public class FileUploadController {
 		}
 		
 		return "redirect:home.do";
-	}
-
-
-	public void setMethodNameResolver(Object arg0) {
-		
 	}
 }

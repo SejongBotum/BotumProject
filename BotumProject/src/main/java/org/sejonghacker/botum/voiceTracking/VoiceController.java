@@ -18,7 +18,6 @@ public class VoiceController {
 	@RequestMapping(value = "recode.do", method = RequestMethod.POST)
 	public void recode(String msg, String fileName, String dir, Model m, HttpServletRequest req){
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
-		//System.out.println("Source : " + msg + "name : " + fileName + "number : " + dir);
 		if(msg.equals("/0") || msg.equals("/1")) return;
 		msg += "<br>";
 		System.out.println(contextPath + fileName + dir);
@@ -39,14 +38,11 @@ public class VoiceController {
 	public JSONObject getScripts(String dir, String fileName, HttpServletRequest req) {
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
 		String res = "";
-		System.out.println(dir + "  " + fileName);
 		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, fileName, dir);
 		res = vfr.read(dir, fileName);
-		System.out.println(res);
 		Map<String, String> jMap = new HashMap<String, String>();
 		jMap.put("content", res);
 		JSONObject jsonObject = new JSONObject(jMap);
-		System.out.println("obj : " + jsonObject.toString());
 		return jsonObject;
 	}
 }

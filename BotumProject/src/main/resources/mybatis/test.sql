@@ -44,14 +44,13 @@ insert into lectures(member_id, lect_name, dir_name) values("p10003", "고급프
 insert into lectures(member_id, lect_name, dir_name) values("p10004", "모바일프로그래밍(001)", "201720202922008066001");
 insert into lectures(member_id, lect_name, dir_name) values("p10004", "JAVA프로그래밍(004)", "201620202922005130004");
 
-
 select count(*) from lectures where member_id = 'p10004';
 
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10001", "1031", "박태순", 1);
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10002", "1031", "공성곤", 1);
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10003", "1031", "조승철", 1);
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10004", "1031", "안용학", 1);
-		select count(*) from members where member_id='p10001' and member_pwd='1031';
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10004", "1031", "안용학", 1);
 insert into members(member_id, member_pwd, member_name, is_professor) values("p10004", "1031", "안용학", 1);
 
+		select count(*) from members where member_id='p10001' and member_pwd='1031';

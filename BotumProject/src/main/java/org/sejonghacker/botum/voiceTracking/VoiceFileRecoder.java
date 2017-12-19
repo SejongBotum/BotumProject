@@ -12,13 +12,16 @@ public class VoiceFileRecoder {
 	private String fileNo;
 	private String owner;
 	private String contextPath;
-
+	private String regfix;
+	
 	public VoiceFileRecoder(String contextPath, String fileNo, String owner) {
 		super();
+		this.regfix = "\\";
+//		this.regfix = "/";
 		this.contextPath = contextPath;
 		this.fileNo = fileNo;
 		this.owner = owner;
-		this.path = contextPath + "\\" + owner;
+		this.path = contextPath + regfix + owner;
 	}
 	
 	public String recode(String sentence) {
@@ -30,13 +33,13 @@ public class VoiceFileRecoder {
 		try {
 			File file = new File(path);
 			if(file.exists()) {
-				file = new File(path + "\\" + fileNo);
+				file = new File(path + regfix + fileNo);
 				if(!file.exists()) {
 					file.createNewFile();
 				}
 			}else {
 				file.mkdirs();
-				file = new File(path + "\\" + fileNo);
+				file = new File(path + regfix + fileNo);
 				file.createNewFile();
 			}
 			
@@ -57,7 +60,7 @@ public class VoiceFileRecoder {
 	public String read(String name, String number) {
 		FileReader fr = null;
 		BufferedReader br = null;
-		File file = new File(path + "\\" + number);
+		File file = new File(path + regfix + number);
 		String data = "";
 		String allString = "";
 		

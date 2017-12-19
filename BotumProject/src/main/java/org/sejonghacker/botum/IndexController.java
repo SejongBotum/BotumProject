@@ -39,4 +39,9 @@ public class IndexController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "notFound.do")
+	public String notFound() {
+		return "page-404";
+	}
+	
 }

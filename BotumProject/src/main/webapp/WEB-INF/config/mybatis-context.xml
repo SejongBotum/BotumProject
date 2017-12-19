@@ -31,6 +31,16 @@
 </bean> 
  -->
 
+<!-- 서버에서의 설정 -->
+<!-- 
+<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+	<property name="driverClass" value="org.mariadb.jdbc.Driver"/>
+	<property name="url" value="jdbc:mariadb://localhost:3306/bt"/>
+	<property name="username" value="local"/>
+	<property name="password" value="botum"/>
+</bean> 
+ -->
+
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"/>
 	<property name="configLocation" value="classpath:/mybatis/config/SqlSessionConfig.xml"/>
