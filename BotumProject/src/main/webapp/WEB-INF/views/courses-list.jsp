@@ -79,14 +79,15 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <c:forEach items="${list}" var="lect" varStatus="stat">
                                         <tr>
-                                            <td>디지털신호처리시스템</td><td>이영렬 교수님</td>
+                                            <td>${lect.name}</td>
                                             <td>
-                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=디지털신호처리">열람</a>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=${lect.name}&number=${lect.number}">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <%-- <tr>
                                             <td>선형대수</td><td>이영렬 교수님</td>
                                             <td>
                                             	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=선형대수">열람</a>
@@ -99,7 +100,8 @@
                                             	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이태하&number=고전독서">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
-                                        </tr>
+                                        </tr> --%>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
 
@@ -116,7 +118,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2017 - 2018 © Abstack. - Coderthemes.com
+                    2017 Botum - Sejong Hackerthon
                 </footer>
 
             </div>
