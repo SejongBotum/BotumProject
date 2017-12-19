@@ -5,23 +5,12 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Abstack - Responsive Web App Kit</title>
+        <title>BOTUM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/frontAssets/images/favicon.ico">
-
-        <!-- App css -->
-        <link href="${pageContext.servletContext.contextPath}/frontAssets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/frontAssets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/frontAssets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/frontAssets/css/style.css" rel="stylesheet" type="text/css" />
-
-        <script src="${pageContext.servletContext.contextPath}/frontAssets/js/modernizr.min.js"></script>
-
+        <jsp:include page="layout/css.jsp"></jsp:include>
     </head>
 
 
@@ -65,8 +54,36 @@
                             </div>
                         </div>
                         <!-- end row -->
+ 						<div class="row">
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <div class="row">
+		                                <!-- Simple card -->
+			                            <div class="col-md-6 col-lg-6">
+			                                <div class="card m-b-30">
+			                                    <img class="card-img-top img-fluid" src="${pageContext.servletContext.contextPath}/frontAssets/images/small/img-1.jpg" alt="Card image cap">
+			                                    <div class="card-body">
+			                                        <h5 class="card-title">DSP-CHAP6</h5>
+			                                        <p class="card-text">Frequency Response</p>
+			                                        <a href="#" class="btn btn-primary">PREV</a>
+			                                        <a href="#" class="btn btn-primary">NEXT</a>
+			                                    </div>
+			                                </div>
+			                            </div>
+		                            	<!-- card -->
+                                        <div class="col-6">
+                                            <h3 class="m-t-0 header-title">본문</h3>
+											<p class="card-text" id="script">123123</p>
+                                            <div class="clearfix"></div>
+                                        </div>
 
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
 
+                        </div>
+<!-- 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-box">
@@ -80,11 +97,12 @@
                                         </div>
 
                                     </div>
-                                    <!-- end row -->
+                                    end row
                                 </div>
                             </div>
 
                         </div>
+                         -->
                         <!-- end row -->
 
 
