@@ -1,7 +1,9 @@
 package org.sejonghacker.botum.session;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -9,18 +11,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.sejonghacker.botum.Crawling.Lecture;
+import org.sejonghacker.botum.Crawling.LectureDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SessionController {
 	
 	@Resource
 	private SessionService sessionService;
+	@Resource
+	private LectureDAO lectureDAO;
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "getLectureList.do", method=RequestMethod.POST)
+	@ResponseBody
+	public Object getLectureList(String id, String pw) {
+		if(sessionService.login(id, pw) == null) {
+			return null;
+		}
+		ArrayList<Lecture> lectList = lectureDAO.getAllList(id);
+		JSONArray jsonArray = new JSONArray();
+		jsonArray.addAll(((List<Lecture>)lectList));
+		System.out.println(jsonArray);
+		return jsonArray;
+	}
+	
 	
 	@RequestMapping(value="login.do", method = RequestMethod.POST)
 	public String login(String id, String password, HttpSession session) throws IOException {
