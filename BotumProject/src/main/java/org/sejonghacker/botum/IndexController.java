@@ -27,13 +27,11 @@ public class IndexController {
 	 * @return 메인 인덱스 페이지
 	 */
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)
-
-	public String home(Model m, HttpServletRequest request) {
-		HttpSession session = request.getSession();
+	public String home(Model m, HttpSession session) {
 		MemberVO mvo = (MemberVO) session.getAttribute("mvo");
 		
 		//MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
-		return (mvo == null)? "login" : "courses-list";
+		return (mvo == null)? "login" : "redirect:courses-list.do";
 	}
 	
 }

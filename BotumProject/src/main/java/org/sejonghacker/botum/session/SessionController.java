@@ -22,9 +22,7 @@ public class SessionController {
 	private SessionService sessionService;
 	
 	@RequestMapping(value="login.do", method = RequestMethod.POST)
-	public String login(String id, String password, HttpServletRequest request) throws IOException {
-		HttpSession session = request.getSession();
-		
+	public String login(String id, String password, HttpSession session) throws IOException {
 		// 블랙보드 페이지 접속
 		Connection.Response loginPageResponse = Jsoup.connect("https://blackboard.sejong.ac.kr/")
 													 .timeout(3000)
