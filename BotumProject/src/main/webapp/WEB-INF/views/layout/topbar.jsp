@@ -92,40 +92,6 @@
                     </div>
 
                     <div class="slimscroll" style="max-height: 190px;">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon"><img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Cristina Pride</p>
-                            <p class="text-muted font-13 mb-0 user-msg">Hi, How are you? What about our next meeting</p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon"><img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-3.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Sam Garret</p>
-                            <p class="text-muted font-13 mb-0 user-msg">Yeah everything is fine</p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon"><img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Karen Robinson</p>
-                            <p class="text-muted font-13 mb-0 user-msg">Wow that's great</p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon"><img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-5.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Sherry Marshall</p>
-                            <p class="text-muted font-13 mb-0 user-msg">Hi, How are you? What about our next meeting</p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon"><img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-6.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Shawn Millard</p>
-                            <p class="text-muted font-13 mb-0 user-msg">Yeah everything is fine</p>
-                        </a>
                     </div>
 
                     <!-- All-->
@@ -146,7 +112,11 @@
                     <div class="dropdown-item noti-title">
                         <h6 class="text-overflow m-0">Welcome !</h6>
                     </div>
-
+                    
+                    <!-- item-->
+                    <a href="" class="dropdown-item notify-item" data-toggle="modal" data-target=".bs-example-modal-lg">
+                        <i class="fi-paper"></i> <span>material upload</span>
+                    </a>
                     <!-- item-->
                     <a href="${pageContext.servletContext.contextPath}/logout.do" class="dropdown-item notify-item">
                         <i class="fi-power"></i> <span>Logout</span>
@@ -163,14 +133,48 @@
                     <i class="dripicons-menu"></i>
                 </button>
             </li>
-<!--             <li class="hide-phone app-search">
-                <form role="search" class="">
-                    <input type="text" placeholder="Search..." class="form-control">
-                    <a href=""><i class="fa fa-search"></i></a>
-                </form>
-            </li> -->
         </ul>
 
     </nav>
 
 </div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h5 class="modal-title" id="myLargeModalLabel">업로드 할 과목과 파일을 선택하세요.</h5>
+			</div>
+			<div class="modal-body" align="center">
+				<form enctype="multipart/form-data" method="post"
+					action="${pageContext.request.contextPath }/uploadFile.do" class="form-horizontal ">
+					<select class="form-control select2" name="dir">
+						<option>Select</option>
+							<c:forEach items="${list}" var="lect" varStatus="stat">
+							<option value="${lect.number}">${lect.name}</option>
+							</c:forEach>	
+					</select>
+					<br>
+					<input type="file" name= "file" class="btn-secondary">
+					<input type="submit" class="btn btn-gradient btn-file" value="업로드">
+				</form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h6 class="modal-title" id="mySmallModalLabel">업로드 할 과목과 파일을 선택하세요.</h6>
+            </div>
+            <div class="modal-body" align="center">
+
+            </div>
+        </div>/.modal-content
+    </div>/.modal-dialog
+</div>/.modal -->
+
+
+

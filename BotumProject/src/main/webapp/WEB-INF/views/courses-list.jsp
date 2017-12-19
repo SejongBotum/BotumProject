@@ -58,7 +58,7 @@
                                     <h3 class="page-title float-left">강의 목록</h3>
 
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item"><a href="#">강의 목록</a></li>
+                                        <li class="breadcrumb-item"><a href="#"></a></li>
                                     </ol>
 
                                     <div class="clearfix"></div>
