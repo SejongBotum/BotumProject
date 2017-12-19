@@ -185,6 +185,25 @@
 		</dependency>
 		<!-- Jsoup 끝 -->
 		
+		<!-- Selenium -->
+		<dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+    		<artifactId>selenium-server</artifactId>
+    		<version>2.53.1</version>
+		</dependency>
+		<!-- Selenium 끝 -->
+		
+		<!-- PhantomJS -->
+		<!-- <dependency>
+    		<groupId>com.github.detro</groupId>
+    		<artifactId>phantomjsdriver</artifactId>
+    		<version>1.2.0</version>
+		</dependency> -->
+		<dependency>
+    		<groupId>com.github.detro.ghostdriver</groupId>
+    		<artifactId>phantomjsdriver</artifactId>
+    		<version>1.1.0</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
