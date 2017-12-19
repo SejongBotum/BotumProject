@@ -80,9 +80,24 @@
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>A basic message</td>
+                                            <td>디지털신호처리시스템</td><td>이영렬 교수님</td>
                                             <td>
-                                                <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=디지털신호처리">열람</a>
+                                                <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>선형대수</td><td>이영렬 교수님</td>
+                                            <td>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=선형대수">열람</a>
+                                                <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>고전독서</td><td>이태하 교수님</td>
+                                            <td>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=고전독서">열람</a>
+                                                <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>
                                         </tbody>

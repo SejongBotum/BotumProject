@@ -63,22 +63,29 @@
                             <div class="col-12">
                                 <div class="card-box">
                                     <h4 class="header-title m-t-0">File Upload</h4>
-									
-                                    <form action="#" class="form-horizontal ">
-                                        <div class="form-group row">
+                                    <!-- 
+									<form enctype="multipart/form-data" name="fake" method="post" 
+										action="" class="form-horizontal "></form> -->
+                                    <form enctype="multipart/form-data" name="uploadForm"
+										action="${pageContext.request.contextPath }/uploadFile.do" class="form-horizontal ">
+<%-- 										<form action="${pageContext.request.contextPath }/uploadFile.do" method="post" class="form-horizontal "> --%>
                                             <label class="col-3 col-form-label">파일을 선택하세요.</label>
-                                            <div class="controls col-9">
+                                                <input type="file" name= "file" class="btn-secondary">
+                                                <input type="submit" class="btn btn-gradient btn-file" value="업로드">
+<!--										
+                                        <div class="form-group row">
+                                             <div class="controls col-9">
                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <button type="button" class="btn btn-gradient btn-file">
                                                         <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select file</span>
                                                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                                                        <input type="file" class="btn-secondary" />
                                                     </button>
                                                     <span class="fileupload-preview" style="margin-left:5px;"></span>
                                                     <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
                                                 </div>
-                                            </div>
+                                            </div> 
                                         </div>
+                                        -->
                                     </form>
                                 </div>
                             </div>

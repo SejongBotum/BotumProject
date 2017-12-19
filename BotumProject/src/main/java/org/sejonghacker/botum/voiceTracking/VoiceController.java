@@ -20,7 +20,7 @@ public class VoiceController {
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
 		System.out.println("Source : " + msg + "name : " + name + "number : " + number);
 		msg += "<br>";
-		System.out.println(contextPath);
+		System.out.println(contextPath + name + number);
 		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, number, name);
 		vfr.recode(msg);
 		

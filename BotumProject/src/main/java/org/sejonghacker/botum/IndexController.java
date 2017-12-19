@@ -27,8 +27,8 @@ public class IndexController {
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)
 	public String home(Model m) {
 		//이 부분은 임시 데이터임
-		MemberVO mvo = null;
-		//MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
+		//MemberVO mvo = null;
+		MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
 		//-----
 		return (mvo == null)? "login" : "courses-list";
 	}
