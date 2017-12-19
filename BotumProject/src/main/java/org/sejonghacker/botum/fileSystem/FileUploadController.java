@@ -1,5 +1,8 @@
 package org.sejonghacker.botum.fileSystem;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -23,8 +26,16 @@ public class FileUploadController {
 			@RequestParam("dir") String dir,
 			HttpSession session) {
 		uploadPath = session.getServletContext().getRealPath("/scripts/");
+		File f = new File(uploadPath + "\\" + dir);
+		if(!f.exists()) f.mkdirs();
+		f = new File(uploadPath + "\\" + dir + "\\" + "material.pdf");
+		System.out.println(file.getOriginalFilename());
+		try {
+			file.transferTo(f);
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
+		}
 		
-		System.out.println(dir + uploadPath + " " + file.getOriginalFilename());
 		return "redirect:home.do";
 	}
 

@@ -39,7 +39,6 @@
                     <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                         View all <i class="fi-arrow-right"></i>
                     </a>
-
                 </div>
             </li>
 
@@ -55,7 +54,7 @@
                     <div class="dropdown-item noti-title">
                         <h6 class="m-0"><span class="float-right"><a href="" class="text-dark"><small>Clear All</small></a> </span>Chat</h6>
                     </div>
-
+					
                     <div class="slimscroll" style="max-height: 190px;">
                     </div>
 
@@ -127,19 +126,6 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h6 class="modal-title" id="mySmallModalLabel">업로드 할 과목과 파일을 선택하세요.</h6>
-            </div>
-            <div class="modal-body" align="center">
-
-            </div>
-        </div>/.modal-content
-    </div>/.modal-dialog
-</div>/.modal -->
 
 
 
