@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.jsoup.Connection;
@@ -72,13 +73,9 @@ public class SessionController {
 		                                    .data(data)
 		                                    .method(Connection.Method.POST)
 		                                    .execute();
-
-		System.out.println("로그인");
 		
 		// 로그인 성공 후 얻은 쿠키
 		Map<String, String> loginCookie = response.cookies();
-		
-		System.out.println(loginCookie.size());
 		
 		if(loginCookie.size() > 0) {
 			System.out.println("로그인 성공");
@@ -99,5 +96,17 @@ public class SessionController {
 	@RequestMapping(value="register.do", method = RequestMethod.POST)
 	public String register(MemberVO mvo) {
 		return (sessionService.register(mvo))? "index" : "index";
+	}
+	
+	@RequestMapping(value="logout.do")
+	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		Object obj = session.getAttribute("mvo");
+		
+		if(obj != null) {
+			session.removeAttribute("mvo");
+			session.invalidate();
+		}
+		
+		return "redirect:loginForm.do";
 	}
 }
