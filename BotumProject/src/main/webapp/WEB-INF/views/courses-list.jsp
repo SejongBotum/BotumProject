@@ -29,7 +29,7 @@
 
 
     <body>
-
+		<jsp:include page="layout/session-check.jsp"></jsp:include>
         <!-- Begin page -->
         <div id="wrapper">
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * 2017.12.16. 세종대학교 해커톤 프로젝트
+ * 2017.12.19. 세종대학교 해커톤 프로젝트
  * Team Botum
  *
  * @author siotMan
@@ -31,7 +31,12 @@ public class IndexController {
 		MemberVO mvo = (MemberVO) session.getAttribute("mvo");
 		
 		//MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
-		return (mvo == null)? "login" : "redirect:courses-list.do";
+		return (mvo == null)? "redirect:loginForm.do" : "redirect:courses-list.do";
+	}
+	
+	@RequestMapping(value = "loginForm.do")
+	public String loginForm() {
+		return "login";
 	}
 	
 }

@@ -58,6 +58,7 @@ public class CrawlingController {
 		MemberVO mvo = (MemberVO) session.getAttribute("mvo");
 		if(mvo == null) {
 			System.out.println("세션에 로그인 정보 없음");
+			return "courses-list";
 		}
 		String id = mvo.getId();
 		String password = mvo.getPw();

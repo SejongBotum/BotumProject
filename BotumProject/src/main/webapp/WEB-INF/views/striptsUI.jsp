@@ -52,13 +52,6 @@
                         </div>
                         <!-- end row -->
                         <div class="form-group row">
-                            <!-- <label class="col-2 col-form-label">질문란</label> -->
-                            <div class="col-10">
-                                <input type="text" class="form-control" value="질문을 입력하세요">
-                            </div>
-                            <div class="col-2" align="right">
-                            <button class="btn btn-primary waves-light waves-effect w-xs" onclick="">제출</button>
-                            </div>
                         </div>
  						<div class="row">
                             <div class="col-md-12">
@@ -67,9 +60,7 @@
 		                                <!-- Simple card -->
 			                            <div class="col-md-6 col-lg-6">
 			                                <div class="card m-b-30">
-			                                <iframe style = "size: witdth:100%;height:500px;" src = "${pageContext.servletContext.contextPath}/scripts/${param.name}/material.pdf"></iframe>
-<%-- 			                                    <img class="card-img-top img-fluid" src="${pageContext.servletContext.contextPath}/frontAssets/images/small/img-1.jpg" alt="Card image cap"> --%>
-
+			                                <iframe style = "size: witdth:100%;height:500px;" src = "${pageContext.servletContext.contextPath}/scripts/${param.number}/material.pdf"></iframe>
 			                                </div>
 			                            </div>
 		                            	<!-- card -->
@@ -111,7 +102,7 @@
 				getContent();
 			});
 			function getContent(){
-				$.getJSON("getScripts.do?name=${name}&number=${number}", function(data){
+				$.getJSON("getScripts.do?name=${number}&number=${name}", function(data){
 					$("#script").html(data.content);
 				});
 				setTimeout("getContent()", 2000);
