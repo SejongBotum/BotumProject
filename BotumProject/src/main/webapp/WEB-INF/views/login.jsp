@@ -37,12 +37,11 @@
                                         <h6 class="text-uppercase text-center font-bold mt-4">로그인</h6>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="#">
-
+                                        <form class="form-horizontal" action="login.do" method="post">
                                             <div class="form-group m-b-20 row">
                                                 <div class="col-12">
                                                     <label for="emailaddress">아이디</label>
-                                                    <input class="form-control" type="text" id="emailaddress" required="" placeholder="아이디를 입력하세요.">
+                                                    <input class="form-control" type="text" id="id" name="id" required="" placeholder="아이디를 입력하세요.">
                                                 </div>
                                             </div>
 
@@ -50,20 +49,7 @@
                                                 <div class="col-12">
                                                     <a href="page-recoverpw.html" class="text-muted pull-right"><small>비밀번호를 잊으셨나요?</small></a>
                                                     <label for="password">비밀번호</label>
-                                                    <input class="form-control" type="password" required="" id="password" placeholder="비밀번호를 입력하세요.">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row m-b-20">
-                                                <div class="col-12">
-
-                                                    <div class="checkbox checkbox-success">
-                                                        <input id="remember" type="checkbox" checked="">
-                                                        <label for="remember">
-                                                            아이디 기억하기
-                                                        </label>
-                                                    </div>
-
+                                                    <input class="form-control" type="password" required="" name="password" id="password" placeholder="비밀번호를 입력하세요.">
                                                 </div>
                                             </div>
 
