@@ -19,7 +19,7 @@ public class VoiceController {
 	public void recode(String msg, String name, String number, Model m, HttpServletRequest req){
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
 		System.out.println("Source : " + msg + "name : " + name + "number : " + number);
-
+		msg += "<br>";
 		System.out.println(contextPath);
 		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, number, name);
 		vfr.recode(msg);

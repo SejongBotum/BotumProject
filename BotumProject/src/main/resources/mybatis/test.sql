@@ -1,13 +1,19 @@
-drop table test1;
 
+drop table test1;
 create table test1(
 	id INT,
 	val varchar(30),
 	CONSTRAINT PK_test1 PRIMARY KEY (id)
 );
 
-insert into test1(id, val) values(1, 'test');
-insert into test1(id, val) values(2, 'test2');
-insert into test1(id, val) values(3, 'test3');
+drop table member;
+create table member(
+	id varchar(30),
+	pw varchar(30),
+	name varchar(30),
+	is_professor INT,
+	constraint PK_member primary key (id)
+);
 
-select * from test1 where id = 0;
+select * from member;
+insert into member(id, pw, name, is_professor) values("admin", "1031", "관리자", 1);
