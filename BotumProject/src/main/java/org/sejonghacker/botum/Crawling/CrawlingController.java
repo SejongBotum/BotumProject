@@ -5,12 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,8 +17,6 @@ import org.sejonghacker.botum.session.MemberVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import netscape.javascript.JSObject;
 
 @Controller
 public class CrawlingController {
@@ -89,7 +84,7 @@ public class CrawlingController {
 		
 		Map<String, String> loginCookie = response.cookies();
 		
-		// 페이지 파싱
+		// 로그인 후 홈 페이지 파싱
 		Document homePageDocument = Jsoup.connect(bbPath)
 										 .userAgent(userAgent)
 						                 .header("Origin", "https://blackboard.sejong.ac.kr")
@@ -101,17 +96,12 @@ public class CrawlingController {
 						                 .cookies(loginCookie)
 						                 .get();
 		
-//		System.out.println(homePageDocument);
-		
 		Elements divs = homePageDocument.select("div.edit_controls");
-		System.out.println(divs.size());
 		Element div = divs.get(0);
-//		System.out.println(div);
 		Element a = div.getElementsByTag("a").get(0);
-//		System.out.println(a);
 		String lectListPath = a.attr("href");
-//		System.out.println(lectListPath);
 		
+		// 강의목록 페이지로 이동 후 페이지 파싱
 		Document listPageDoc = Jsoup.connect(bbPath + "/" + lectListPath)
 									.userAgent(userAgent)
 					                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8")
@@ -121,24 +111,21 @@ public class CrawlingController {
 					                .cookies(loginCookie)
 					                .get();
 		
-//		System.out.println(listPageDoc);
 		
 		Elements lects = listPageDoc.select("strong");
 		
+		// 학생 전체 수강 목록 데이터 전송
 		List<Map<String, String>> list = new ArrayList<>();
-		
 		for (Element element : lects) {
 			String[] lectVal = (element.text()).split(":");
 			String lectNum = lectVal[0].trim();
 			String lectName = lectVal[1].trim().replaceAll(" ", "");
-			System.out.println(lectNum + " " + lectName);
 			
 			Map<String, String> jMap = new HashMap<String, String>();
 			jMap.put("number", lectNum);
 			jMap.put("name", lectName);
 			list.add(jMap);
 		}
-
 		model.addAttribute("list", list);
 		
 		return "courses-list";
