@@ -47,7 +47,6 @@
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <a href="page-recoverpw.html" class="text-muted pull-right"><small>비밀번호를 잊으셨나요?</small></a>
                                                     <label for="password">비밀번호</label>
                                                     <input class="form-control" type="password" required="" name="password" id="password" placeholder="비밀번호를 입력하세요.">
                                                 </div>
@@ -60,13 +59,6 @@
                                             </div>
 
                                         </form>
-
-                                        <div class="row m-t-50">
-                                            <div class="col-sm-12 text-center">
-                                                <p class="text-muted">회원가입 하실래요?<a href="page-register.html" class="text-dark m-l-5"><b> 회원가입</b></a></p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
