@@ -49,7 +49,6 @@ public class VoiceFileRecoder {
 			bw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		
 		return cbuf.toString();
@@ -69,7 +68,6 @@ public class VoiceFileRecoder {
 				allString += data;
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 		return allString;

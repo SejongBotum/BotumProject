@@ -1,7 +1,5 @@
 package org.sejonghacker.botum.fileSystem;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -22,13 +20,13 @@ public class FileUploadController {
 	@RequestMapping(value = "uploadFile.do", method = RequestMethod.GET)
 	public String uploadFile(HttpServletRequest req) {
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
-		try {
+//		MultipartRequest m = new 
+/*		try {
 			MultipartRequest m = new MultipartRequest(req, contextPath, 1024*1024*5, "UTF-8");
 			System.out.println(m.getOriginalFileName("file"));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		//System.out.println(files.getFile().get(0).toString());
+		}*/
 		return "courses-list";
 	}
 }

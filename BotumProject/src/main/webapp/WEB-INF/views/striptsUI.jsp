@@ -44,8 +44,8 @@
                                     <h4 class="page-title float-left">Scripts</h4>
 
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item"><a href="#">이영렬 교수님</a></li>
-                                        <li class="breadcrumb-item"><a href="#">디지털신호처리시스템</a></li>
+                                        <li class="breadcrumb-item"><a href="#">${param.name} 교수님</a></li>
+                                        <li class="breadcrumb-item"><a href="#">${param.number} </a></li>
                                         <li class="breadcrumb-item active">분반번호 1</li>
                                     </ol>
 
@@ -63,8 +63,8 @@
 			                                <div class="card m-b-30">
 			                                    <img class="card-img-top img-fluid" src="${pageContext.servletContext.contextPath}/frontAssets/images/small/img-1.jpg" alt="Card image cap">
 			                                    <div class="card-body">
-			                                        <h5 class="card-title">DSP-CHAP6</h5>
-			                                        <p class="card-text">Frequency Response</p>
+			                                        <h5 class="card-title">${param.name}</h5>
+			                                        <p class="card-text">${param.number}</p>
 			                                        <a href="#" class="btn btn-primary">PREV</a>
 			                                        <a href="#" class="btn btn-primary">NEXT</a>
 			                                    </div>
@@ -73,7 +73,7 @@
 		                            	<!-- card -->
                                         <div class="col-6">
                                             <h3 class="m-t-0 header-title">본문</h3>
-											<p class="card-text" id="script">123123</p>
+											<p class="card-text" id="script"></p>
                                             <div class="clearfix"></div>
                                         </div>
 

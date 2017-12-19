@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Abstack - Responsive Web App Kit</title>
+        <title>BOTUM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -30,7 +30,7 @@
             <jsp:include page="layout/topbar.jsp"></jsp:include>
             <!-- Top Bar End -->
 
-
+			
             <!-- ========== Left Sidebar Start ========== -->
             <jsp:include page="layout/leftside.jsp"></jsp:include>
             <!-- Left Sidebar End -->

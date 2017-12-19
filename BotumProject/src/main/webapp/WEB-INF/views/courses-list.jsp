@@ -96,7 +96,7 @@
                                         <tr>
                                             <td>고전독서</td><td>이태하 교수님</td>
                                             <td>
-                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이영렬&number=고전독서">열람</a>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=이태하&number=고전독서">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>
