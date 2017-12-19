@@ -83,7 +83,7 @@
                                         <tr>
                                             <td>${lect.name}</td>
                                             <td>
-                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?name=${lect.name}&number=${lect.number}">열람</a>
+                                            	<a href ="${pageContext.servletContext.contextPath}/showScripts.do?fileName=${lect.name}&dir=${lect.number}">열람</a>
                                                 <!-- <button type="button" class="btn btn-light waves-effect waves-light btn-sm" id="sa-basic">열람</button> -->
                                             </td>
                                         </tr>

@@ -16,31 +16,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class VoiceController {
 
 	@RequestMapping(value = "recode.do", method = RequestMethod.POST)
-	public void recode(String msg, String name, String number, Model m, HttpServletRequest req){
+	public void recode(String msg, String fileName, String dir, Model m, HttpServletRequest req){
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
-		System.out.println("Source : " + msg + "name : " + name + "number : " + number);
+		//System.out.println("Source : " + msg + "name : " + fileName + "number : " + dir);
+		if(msg.equals("/0") || msg.equals("/1")) return;
 		msg += "<br>";
-		System.out.println(contextPath + name + number);
-		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, number, name);
+		System.out.println(contextPath + fileName + dir);
+		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, dir, fileName);
 		vfr.recode(msg);
 		
 	}
 	
 	@RequestMapping(value ="showScripts.do")
-	public String showScripts(String name, String number, Model m, HttpServletRequest req){
-		m.addAttribute("name", name);
-		m.addAttribute("number", number);
+	public String showScripts(String dir, String fileName, Model m, HttpServletRequest req){
+		m.addAttribute("dir", dir);
+		m.addAttribute("fileName", fileName);
 		return "striptsUI";
 	}
 	
 	@RequestMapping(value ="getScripts.do")
 	@ResponseBody
-	public JSONObject getScripts(String name, String number, HttpServletRequest req) {
+	public JSONObject getScripts(String dir, String fileName, HttpServletRequest req) {
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
 		String res = "";
-		
-		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, number, name);
-		res = vfr.read(name, number);
+		System.out.println(dir + "  " + fileName);
+		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, fileName, dir);
+		res = vfr.read(dir, fileName);
 		System.out.println(res);
 		Map<String, String> jMap = new HashMap<String, String>();
 		jMap.put("content", res);

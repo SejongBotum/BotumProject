@@ -60,7 +60,7 @@
 		                                <!-- Simple card -->
 			                            <div class="col-md-6 col-lg-6">
 			                                <div class="card m-b-30">
-			                                <iframe style = "size: witdth:100%;height:500px;" src = "${pageContext.servletContext.contextPath}/scripts/${param.number}/material.pdf"></iframe>
+			                                <iframe style = "size: witdth:100%;height:500px;" src = "${pageContext.servletContext.contextPath}/scripts/${param.dir}/material.pdf"></iframe>
 			                                </div>
 			                            </div>
 		                            	<!-- card -->
@@ -102,7 +102,7 @@
 				getContent();
 			});
 			function getContent(){
-				$.getJSON("getScripts.do?name=${number}&number=${name}", function(data){
+				$.getJSON("getScripts.do?dir=${dir}&fileName=${fileName}", function(data){
 					$("#script").html(data.content);
 				});
 				setTimeout("getContent()", 2000);
