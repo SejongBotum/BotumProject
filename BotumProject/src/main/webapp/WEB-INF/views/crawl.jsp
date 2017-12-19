@@ -19,6 +19,6 @@
 </textarea>
 <P>  The time on the server is</P>
 테스트  
---- ${txt} ---
+--- ${loginCookie} ---
 </body>
 </html>
