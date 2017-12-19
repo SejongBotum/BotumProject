@@ -10,7 +10,7 @@
                 <li class="menu-title">Navigation</li>
                 <li>
                     <a href="${pageContext.request.contextPath}/courses-list.do">
-                        <i class="fi-air-play"></i><span class="badge badge-danger badge-pill pull-right">3</span> <span> 스크립트 보기 </span>
+                        <i class="fi-air-play"></i><!-- <span class="badge badge-danger badge-pill pull-right">3</span> --> <span> 스크립트 보기 </span>
                     </a>
                 </li>
             </ul>

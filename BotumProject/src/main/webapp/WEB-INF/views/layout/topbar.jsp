@@ -69,23 +69,23 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">${sessionScope.mvo.id}<i class="mdi mdi-chevron-down"></i> </span>
+                    <img src="${pageContext.servletContext.contextPath}/frontAssets/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">${sessionScope.mvo.member_id}<i class="mdi mdi-chevron-down"></i> </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-item noti-title">
                         <h6 class="text-overflow m-0">Welcome !</h6>
                     </div>
-                    
-                    <!-- item-->
-                    <a href="" class="dropdown-item notify-item" data-toggle="modal" data-target=".bs-example-modal-lg">
-                        <i class="fi-paper"></i> <span>material upload</span>
-                    </a>
+                    <c:if test="${mvo.is_professor == 1}">
+	                    <!-- item-->
+	                    <a href="" class="dropdown-item notify-item" data-toggle="modal" data-target=".bs-example-modal-lg">
+	                        <i class="fi-paper"></i> <span>material upload</span>
+	                    </a>
+					</c:if>
                     <!-- item-->
                     <a href="${pageContext.servletContext.contextPath}/logout.do" class="dropdown-item notify-item">
                         <i class="fi-power"></i> <span>Logout</span>
                     </a>
-
                 </div>
             </li>
 

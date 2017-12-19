@@ -24,6 +24,15 @@ public class SessionController {
 	
 	@RequestMapping(value="login.do", method = RequestMethod.POST)
 	public String login(String id, String password, HttpSession session) throws IOException {
+		MemberVO mvo;
+		if(id.charAt(0) == 'p') {
+			mvo = sessionService.login(id, password);
+			if(mvo != null) session.setAttribute("mvo", mvo);
+			else session.invalidate();
+			
+			return "redirect:home.do";
+		}
+		
 		// 블랙보드 페이지 접속
 		Connection.Response loginPageResponse = Jsoup.connect("https://blackboard.sejong.ac.kr/")
 													 .timeout(3000)
@@ -80,16 +89,15 @@ public class SessionController {
 		if(loginCookie.size() > 0) {
 			System.out.println("로그인 성공");
 			
-			MemberVO mvo = new MemberVO();
-			mvo.setId(id);
-			mvo.setPw(password);
+			mvo = new MemberVO();
+			mvo.setMember_id(id);
+			mvo.setMember_pwd(password);
 			
 			session.setAttribute("mvo", mvo);
 		} else {
 			System.out.println("로그인 실패?");
 		}
 		
-//		session.setAttribute("mvo", mvo);
 		return "redirect:home.do";
 	}
 	

@@ -16,7 +16,8 @@ public class SessionDAO {
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("id", id);
 		paramMap.put("pw", pw);
-		return sqlSession.selectOne("pwCheck", paramMap);
+
+		return ((int)sqlSession.selectOne("pwCheck", paramMap) > 0)? true:false;
 	}
 
 	public MemberVO getMVO(String id) {

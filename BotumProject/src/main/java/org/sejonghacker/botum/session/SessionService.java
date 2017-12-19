@@ -15,6 +15,6 @@ public class SessionService {
 
 	public boolean register(MemberVO mvo) {
 		sessionDAO.registerMVO(mvo);
-		return sessionDAO.pwCheck(mvo.getId(), mvo.getPw());
+		return sessionDAO.pwCheck(mvo.getMember_id(), mvo.getMember_pwd());
 	}
 }

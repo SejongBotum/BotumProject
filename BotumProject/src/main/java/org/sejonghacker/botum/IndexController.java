@@ -29,7 +29,7 @@ public class IndexController {
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)
 	public String home(Model m, HttpSession session) {
 		MemberVO mvo = (MemberVO) session.getAttribute("mvo");
-		
+		System.out.println(mvo);
 		//MemberVO mvo = new MemberVO("13011085", "1031", "김승신", 0);
 		return (mvo == null)? "redirect:loginForm.do" : "redirect:courses-list.do";
 	}

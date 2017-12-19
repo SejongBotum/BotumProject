@@ -4,15 +4,22 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="session">
-	<select id="idCheck" resultType="Integer" parameterType="HashMap">
-		select count(distinct id) from member where id=#{id} and pw=#{pw};
+	<select id="pwCheck" resultType="Integer" parameterType="HashMap">
+		select count(*) from members where member_id=#{id} and member_pwd=#{pw};
 	</select>
 	
 	<select id="getMVO" resultType="MemberVO" parameterType="String">
-		select * from member where id=#{paramMap.id};
+		select * from members where member_id=#{id};
 	</select>
 	
 	<insert id="registerMVO" parameterType="MemberVO">
-		insert into member(id, pw, name, is_professor) values(#{id}, #{pw}, #{name}, #{is_professor});
+		insert into member(member_id, member_pwd, member_name, is_professor)
+		 values(#{member_id}, #{member_pwd}, #{member_name}, #{is_professor});
 	</insert>
+	
+	<select id="getAllList" resultType="Lecture" parameterType="String">
+		select * from lectures
+		where member_id = #{id}
+	</select>
+	
 </mapper>
