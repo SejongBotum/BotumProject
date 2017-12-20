@@ -38,12 +38,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title float-left">Scripts</h4>
+                                    <h4 class="page-title float-left">${param.fileName}</h4>
 
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item"><a href="#">${param.name} 교수님</a></li>
-                                        <li class="breadcrumb-item"><a href="#">${param.number} </a></li>
-                                        <li class="breadcrumb-item active">분반번호 1</li>
+                                        <li class="breadcrumb-item"><a href="#">${param.fileName}</a></li>
                                     </ol>
 
                                     <div class="clearfix"></div>

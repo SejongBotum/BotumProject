@@ -1,5 +1,8 @@
 package org.sejonghacker.botum.voiceTracking;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,9 +21,17 @@ public class VoiceController {
 	@RequestMapping(value = "recode.do", method = RequestMethod.POST)
 	public void recode(String msg, String fileName, String dir, Model m, HttpServletRequest req){
 		String contextPath = req.getSession().getServletContext().getRealPath("/scripts/");
-		if(msg.equals("/0") || msg.equals("/1")) return;
-		msg += "<br>";
-		System.out.println(contextPath + fileName + dir);
+		Calendar calendear = Calendar.getInstance();
+		Date date = calendear.getTime();
+		if(msg.equals("/0")) {
+			msg = "[system] 강의가 시작 되었습니다.<br>";
+		}else if(msg.equals("/1")) {
+			msg = "[system] 강의가 종료 되었습니다.<br>";
+		}else {
+			String today = (new SimpleDateFormat("HH:mm:ss").format(date));
+			msg = "[" + today + "] " + msg;
+			msg += "<br>";
+		}
 		VoiceFileRecoder vfr = new VoiceFileRecoder(contextPath, dir, fileName);
 		vfr.recode(msg);
 		
